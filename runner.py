@@ -7,11 +7,13 @@ _RUN_COUNT = 300
 
 
 def Play(run_count):
-  history = []
-  last_game = ()
+  history = []  # List of tuples.
+  last_game = ()  # Tuple of who played what.
   p1 = randplayer.Player()
   p2 = smarthistplayer.Player()
   for i in range(run_count):
+    # Run is sent the last game, the player_id and a
+    # function to figure out who played what.
     first = p1.Run(last_game, 1, Judge)
     second = p2.Run(last_game, 2, Judge)
     last_game = (first, second)
@@ -19,6 +21,9 @@ def Play(run_count):
   return history
 
 
+# Takes a tuple of who played what.
+# Returns 0 if draw, otherwise returned player_id
+# of the winner.
 def Judge(game):
   if game[0] == game[1]:
     return 0
