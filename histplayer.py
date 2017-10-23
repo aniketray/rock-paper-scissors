@@ -1,8 +1,9 @@
-
+# Plays whatever gave the most wins till now.
 from collections import defaultdict
 import random
+import player
 
-class Player(object):
+class Player(player.BasePlayer):
 
   def __init__(self):
     self._play_count = defaultdict(lambda: 1.0)

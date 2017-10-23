@@ -1,7 +1,11 @@
-
+# If player wins then plays the strategy that the opponent had played in the
+# last game.
+# If the opponent had won, then plays what hadn't been played by either.
+# Else plays random.
 import random
+import player
 
-class Player(object):
+class Player(player.BasePlayer):
   def Run(self, last_game, player_id, jfunc):
     other_player_id = 3 - player_id
     if last_game:

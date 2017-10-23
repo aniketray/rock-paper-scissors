@@ -1,16 +1,21 @@
+# Main runner program that plays rock paper scissors.
+# Import individual players that implement the player abstract base class.
+# Set Player1 and Player2 below.
 
 import randplayer
 import smarthistplayer
 import histplayer
 
-_RUN_COUNT = 300
+_RUN_COUNT = 3000
+_Player1 = randplayer.Player()
+_Player2 = histplayer.Player()
 
 
 def Play(run_count):
   history = []  # List of tuples.
   last_game = ()  # Tuple of who played what.
-  p1 = randplayer.Player()
-  p2 = smarthistplayer.Player()
+  p1 = _Player1
+  p2 = _Player2
   for i in range(run_count):
     # Run is sent the last game, the player_id and a
     # function to figure out who played what.
